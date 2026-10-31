@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Environment
+env/
+.env
+
+# Data (large files)
+data/raw/*
+data/processed/*
+data/features/*
+
+# Saved models and artifacts
+saved_models/*
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/features/.gitkeep
+!saved_models/.gitkeep
+
+# OS / editor
+.DS_Store
+.vscode/

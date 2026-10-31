@@ -1,0 +1,6 @@
+paths:
+  raw_data: data/raw/customer_support_ticket.csv
+  processed_data: data/processed/cleaned_data.csv
+  featured_data: data/features/featured_data.csv
+  features_dir: data/features
+  models_dir: saved_models

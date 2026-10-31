@@ -1,0 +1,64 @@
+customer_support/
+│
+├── data/
+│   ├── raw/
+│   │   └── customer_support_ticket.csv
+│   ├── processed/                        # saved after cleaning
+│   └── features/                         # saved after feature engineering
+│
+├── notebooks/
+│   ├── initial_check.ipynb               # exploration only
+│   ├── feature_engineering.ipynb         # exploration only
+│   ├── cleaning.ipynb                    # exploration only
+│   ├── eda.ipynb                         # exploration only
+│   ├── priority_classification.ipynb     # prototyping only
+│   ├── category_classification.ipynb     # prototyping only
+│   ├── resolution_time_prediction.ipynb  # prototyping only
+│   └── preprocessor.ipynb                # prototyping only
+│
+├── src/
+│   ├── __init__.py
+│   │
+│   ├── data/
+│   │   ├── __init__.py
+│   │   ├── data_loader_saver.py      # read CSV, connect to DB
+│   │   └── data_cleaning.py          # nulls, types, duplicates
+│   │
+│   ├── features/
+│   │   ├── __init__.py
+│   │   └── feature_engineering.py    # text features, date features
+│   │
+│   ├── preprocessing/
+│   │   ├── __init__.py
+│   │   └── preprocessor.py           # TF-IDF, encoders, scalers
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── priority_classifier.py    # train/predict priority
+│   │   ├── category_classifier.py    # train/predict category
+│   │   └── resolution_regressor.py   # train/predict time
+│   │
+│   └── utils/
+│       ├── __init__.py
+│       ├── logger.py
+│       └── metrics.py                # shared eval functions
+│
+├── pipelines/
+│   ├── train_pipeline.py             # runs all 3 models end-to-end
+│   └── predict_pipeline.py           # loads models, returns predictions
+│
+├── saved_models/
+│   ├── priority_classifier.pkl
+│   ├── category_classifier.pkl
+│   └── resolution_time_regressor.pkl
+│
+├── app/
+│   ├── __init__.py
+│   ├── app.py                        # Streamlit / Flask entry point
+│   ├── ui_components.py              # charts, input forms
+│   └── api_routes.py                 # if using Flask REST API
+│
+├── configs/
+│   └── config.yaml
+│
+└── requirements.txt
